@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body{
+  background: #fff;
+  font-family: 'PT Sans', sans-serif;
+  
+  background: conic-gradient(from 3rad at 50% 50% , red ,yellow,green ,blue);
+
+}
+.header{
+  margin-top: 30px;
+}
+.header a{
+  text-decoration: none; padding-left: 50px;
+  
+}
+.container{
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    
+}
+h2{
+  padding-top: 1.5rem;
+}
+a{
+  color: #333;
+}
+a:hover{
+  color: #da5767;
+  text-decoration: none;
+}
+.card{
+  border: 0.40rem solid #f8f9fa;
+  top: 10%;
+  width: auto;
+}
+.form-control{
+  background-color: #f8f9fa;
+  padding: 10px;
+  padding: 25px 15px;
+  height: 0px;
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+.form-control:focus {
+
+    color: #000000;
+    background-color: #ffffff;
+    border: 3px solid #da5767;
+    outline: 0;
+    box-shadow: none;
+
+}
+footer a{
+  text-decoration: none;
+}
+
+.btn{
+  padding: 0.6rem 1.2rem;
+  background: #da5767;
+  border: 2px solid #da5767;
+}
+.btn-primary:hover {
+
+    
+    background-color: #df8c96;
+    border-color: #df8c96;
+  transition: .3s;
+
+}
+.form-control{
+ 
+    border: 2px solid;  
+    border-radius: 15%;
+    border-image: linear-gradient(to right,red,blue) 1;
+
+
+}
+.d-flex a{
+  color: #000000;
+  background: linear-gradient(to right,red,yellow,blue);
+}
+.fa-eye{
+  font-size: 24px;
+  position:relative;
+  top: 1px;
+  
+}
+
+@keyframes btn {
+  0%{
+    background: #da5767;
+    border-radius: 5%;
+  }
+  50%{
+    transform: rotateZ('180deg');
+  }
+  100%{
+    translate: 1000px,0px;
+  }
+}
+#btn{
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+  <div class="header">
+    
+    <a href="home.html"><i class="fa-solid fa-house"></i> Home</a>
+  </div>
+    
+        <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-md-5">
+             <div class="card">
+               <h2 class="card-title text-center">Register</h2>
+                <div class="card-body py-md-4">
+                 <form _lpchecked="1"class="form" id="form" action="/sign_up" method="post">
+                    <div class="form-group">
+                       <input type="text" class="form-control" id="Username" name="Username" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                       <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                        <input type="password" class="form-control"id="password" name="password" placeholder="Enter password">
+                        <button type="button" id="btn1"><i class="fas fa-eye toggle-icon" id="togglePassword"></i></button>
+                      </div>
+            
+             <div class="form-group">
+                <input type="password" class="form-control"id="passConf" name="passConf" placeholder="confirm-password">
+                <button type="button" id="btn"><i class="fas fa-eye toggle-icon" id="togglePassword"></i></button>
+             </div>
+             <div class="d-flex flex-row align-items-center justify-content-between">
+                <a href="login.html">Login</a>
+                                          <button class="btn btn-primary" type="submit" >Create Account</button>
+                    </div>
+                 </form>
+               </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          <footer>contact us<br/>
+            <a href="https://www.instagram.com/stark_14_rohith/">instagram</a>
+          </footer>
+    <script >const form=document.getElementById('form');
+      const password = document.getElementById('password');
+      const passConf=document.getElementById('passConf');
+      form.addEventListener('submit',(event)=>{
+          if(password.value !==passConf.value){
+              event.defaultPrevented();
+              alert("confirm the password correctly !")
+          }
+      })
+      const button=document.getElementById('btn');
+      button.addEventListener('click',function(){
+        
+        const type=passConf.getAttribute("type")==="password" ? "text":"password";
+        
+        passConf.setAttribute("type",type);
+      })
+      const btn=document.getElementById('btn1');
+      btn.addEventListener('click',function(){
+        
+        const type=password.getAttribute("type")==="password" ? "text":"password";
+        
+        password.setAttribute("type",type);
+      })
+      
+      </script>
+</body>
+
+</html>
